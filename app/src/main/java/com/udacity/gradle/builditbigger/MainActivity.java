@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         String joke = myJoker.getJoke();
         //Toast.makeText(this, joke, Toast.LENGTH_SHORT).show();
         Intent myIntent = new Intent(MainActivity.this,  JokeActivity.class );
+        myIntent.putExtra("joke", joke);
         startActivity(myIntent);
     }
 
