@@ -9,7 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 import com.udacity.gradle.jokes.Joker;
-import com.example.android.jokedisplay.JokeActivity;
+import com.udacity.gradle.displayjoke.JokeActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         Joker myJoker = new Joker();
         String joke = myJoker.getJoke();
         //Toast.makeText(this, joke, Toast.LENGTH_SHORT).show();
-        Intent myIntent = new Intent(MainActivity.this,  JokeActivity.class);
+        Intent myIntent = new Intent(MainActivity.this,  JokeActivity.class );
         startActivity(myIntent);
     }
 
