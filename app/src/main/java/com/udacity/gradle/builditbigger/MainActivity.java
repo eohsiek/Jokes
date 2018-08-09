@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
             String name = params[0].second;
 
             try {
-                return myApiService.sayHi(name).execute().getData();
+                return myApiService.tellJoke().execute().getData();
             } catch (IOException e) {
                 return e.getMessage();
             }
@@ -90,7 +90,10 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
-            Toast.makeText(context, result, Toast.LENGTH_LONG).show();
+           // Toast.makeText(context, result, Toast.LENGTH_LONG).show();
+            Intent myIntent = new Intent(MainActivity.this,  JokeActivity.class );
+            myIntent.putExtra("joke", result);
+            startActivity(myIntent);
         }
     }
 
@@ -105,7 +108,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void tellJoke(View view) {
         new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
-
     }
 
 
