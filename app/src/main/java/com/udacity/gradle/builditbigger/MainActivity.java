@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
+    public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
         private MyApi myApiService = null;
         private Context context;
 
